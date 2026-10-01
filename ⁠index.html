@@ -3,33 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مجلس - Majlis Social Audio</title>
+    <title>تطبيق المجلس | Majlis App</title>
     <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         body {
-            background-color: #0d1b1e;
-            color: #f4f6f8;
-            font-family: Tahoma, sans-serif;
-            text-align: center;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
         }
-        h1 {
-            color: #d4af37;
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 15px;
+            width: 100%;
+            max-width: 600px;
+        }
+        header h1 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         .room-card {
-            background: #1b2a32;
-            border: 2px solid #d4af37;
-            border-radius: 15px;
+            background-color: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
             padding: 20px;
-            margin: 20px auto;
-            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+        }
+        .room-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+        .room-title {
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .room-info {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--gold), #aa7c11);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
-    <h1>مرحباً بك في تطبيق مجلس 👑</h1>
-    <div class="room-card">
-        <h3>الغرفة الملكية الرئيسية</h3>
-        <p>جاري تشغيل منصة البث الصوتي التفاعلي...</p>
+
+    <header>
+        <h1>المجلس</h1>
+        <p>منصة التواصل الصوتي الفاخرة</p>
+    </header>
+
+    <div class="container">
+        <div class="room-card">
+            <div class="room-title">🏛️️ مجلس الأماسي الشعرية</div>
+            <div class="room-info">مناقشات أدبية وأمسيات راقية بحضور نخبة من الضيوف. • متواجد الآن 14 شخصاً</div>
+            <button class="btn" onclick="alert('جاري الانضمام إلى المجلس...')">دخول الغرفة الصوتية</button>
+        </div>
+
+        <div class="room-card">
+            <div class="room-title">⭐ صالون لورد الإداري</div>
+            <div class="room-info">اجتماع وكالة لورد والفعاليات الأسبوعية الخاصة. • متواجد الآن 8 أشخاص</div>
+            <button class="btn" onclick="alert('جاري الانضمام إلى المجلس...')">دخول الغرفة الصوتية</button>
+        </div>
     </div>
+
 </body>
 </html>
